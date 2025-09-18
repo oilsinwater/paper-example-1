@@ -17,6 +17,7 @@ import { Route as IndexImport } from './pages/index';
 import { Route as SearchDataRepositoriesIndexImport } from './pages/search-data-repositories/index';
 import { Route as PlaygroundIndexImport } from './pages/playground/index';
 import { Route as MonitorActivitiesIndexImport } from './pages/monitor-activities/index';
+import { Route as ExploreIndexImport } from './pages/explore/index';
 import { Route as ExploreDataIndexImport } from './pages/explore-data/index';
 import { Route as SearchDataRepositoriesIdImport } from './pages/search-data-repositories/$id';
 import { Route as RunComputationLayoutImport } from './pages/run-computation/_layout';
@@ -90,6 +91,12 @@ const PlaygroundIndexRoute = PlaygroundIndexImport.update({
 const MonitorActivitiesIndexRoute = MonitorActivitiesIndexImport.update({
   id: '/monitor-activities/',
   path: '/monitor-activities/',
+  getParentRoute: () => rootRoute,
+} as any);
+
+const ExploreIndexRoute = ExploreIndexImport.update({
+  id: '/explore/',
+  path: '/explore/',
   getParentRoute: () => rootRoute,
 } as any);
 
@@ -739,6 +746,7 @@ export interface RootRouteChildren {
   CompareDataRoute: typeof CompareDataRouteWithChildren;
   ContributeDataRoute: typeof ContributeDataRouteWithChildren;
   ExploreDataIdRoute: typeof ExploreDataIdRoute;
+  ExploreIndexRoute: typeof ExploreIndexRoute;
   MonitorActivitiesCalendarRoute: typeof MonitorActivitiesCalendarRoute;
   MonitorActivitiesDetailRoute: typeof MonitorActivitiesDetailRoute;
   RunComputationRoute: typeof RunComputationRouteWithChildren;
@@ -754,6 +762,7 @@ const rootRouteChildren: RootRouteChildren = {
   CompareDataRoute: CompareDataRouteWithChildren,
   ContributeDataRoute: ContributeDataRouteWithChildren,
   ExploreDataIdRoute: ExploreDataIdRoute,
+  ExploreIndexRoute: ExploreIndexRoute,
   MonitorActivitiesCalendarRoute: MonitorActivitiesCalendarRoute,
   MonitorActivitiesDetailRoute: MonitorActivitiesDetailRoute,
   RunComputationRoute: RunComputationRouteWithChildren,
@@ -782,6 +791,7 @@ export const routeTree = rootRoute
         "/monitor-activities/detail",
         "/run-computation",
         "/search-data-repositories/$id",
+        "/explore/",
         "/explore-data/",
         "/monitor-activities/",
         "/playground/",
@@ -850,6 +860,9 @@ export const routeTree = rootRoute
     },
     "/explore-data/": {
       "filePath": "explore-data/index.tsx"
+    },
+    "/explore/": {
+      "filePath": "explore/index.tsx"
     },
     "/monitor-activities/": {
       "filePath": "monitor-activities/index.tsx"
