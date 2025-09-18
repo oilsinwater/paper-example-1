@@ -2,500 +2,400 @@
 
 ## Interactive Adaptive Interfaces Demo - STRUDEL Kit
 
-**Version**: 2.1  
-**Date**: September 2025  
+**Version**: 3.0  
+**Date**: September 16, 2025  
 **Product Owner**: Phill Drummond  
-**Status**: Completed
+**Status**: Ready for Development
 
 ---
 
-## Executive Summary
+# 1. Executive Summary & Vision
 
-Create a demonstration microsite that showcases STRUDEL Kit's capabilities for building scientific data exploration interfaces. The demo transforms human-machine interaction research data into an interactive web application, demonstrating how STRUDEL Kit's Task Flow patterns can be applied to analyze behavioral patterns and adaptive interface potential.
+## Problem Statement
 
-## Product Vision
+Scientific research generates vast datasets, but current data exploration tools are either too generic (failing to handle scientific workflows) or too specialized (requiring extensive custom development). Meanwhile, a groundbreaking study of 10,608 human-machine interactions reveals that **adaptive interfaces can improve user efficiency by 40%** - yet no framework exists to easily build such interfaces for scientific data.
 
-## Primary Goal
+**The Challenge**: Research teams spend months building custom data exploration interfaces instead of focusing on their core research, while missing opportunities to implement proven adaptive interface patterns that could dramatically improve their users' productivity.
 
-Demonstrate STRUDEL Kit as the ideal framework for transforming complex research data into accessible, interactive web interfaces.
+## Solution Overview
 
-## Secondary Goal
+Create a compelling demonstration microsite that transforms academic interaction research into an accessible, interactive experience showcasing how STRUDEL Kit enables rapid development of sophisticated scientific data interfaces with built-in adaptive capabilities.
 
-Show how 10,608 human-machine interactions can reveal patterns that enable 40% efficiency improvements through adaptive interfaces.
+## Business Value Proposition
 
-## STRUDEL Kit Components Utilized
+**For STRUDEL Kit**: Demonstrates framework capabilities through a real-world, complex use case  
+**For Scientific Community**: Proves that adaptive interfaces can be built quickly using standard web technologies  
+**ROI**: Teams reduce interface development time from 3+ months to 2-3 weeks while delivering measurably better user experiences
 
-## Core Technologies (from STRUDEL Kit)
+## Success Vision
 
-- **React + TypeScript**: Component architecture
-    
-- **Vite**: Build tooling
-    
-- **TanStack Router**: File-based routing
-    
-- **Material UI (MUI)**: Component library and theming
-    
-- **Plotly.js**: Interactive data visualizations
-    
-- **React Context API**: State management
-    
+_"A research software engineer visits our demo, explores real interaction data, understands STRUDEL patterns in 15 minutes, and downloads the framework to build their own adaptive interface by week's end."_
 
-## STRUDEL Design Patterns
+# 2. User & Market Analysis
 
-1. **Search Data Repositories Pattern**: For filtering interaction data
-    
-2. **Explore Data Pattern**: For examining interaction sequences
-    
-3. **Compare Data Pattern**: For novice vs expert analysis
-    
-4. **Monitor Activities Pattern**: For temporal analysis
-    
+## Primary Persona: Alex Chen - Research Software Engineer
 
-## Target Audience
+**Role**: Technical lead for scientific computing team  
+**Experience**: 5+ years in academic software development  
+**Current Challenge**: Evaluating UI frameworks for team's new data analysis platform
 
-## Primary Users
+**Goals**:
 
-- **Research Software Engineers** evaluating STRUDEL Kit
-    
-- **Scientific UI Developers** seeking proven patterns
-    
-- **Data Scientists** building exploration interfaces
-    
+- Find proven patterns for scientific data exploration interfaces
+- Reduce development time while maintaining high UX quality
+- Implement data-driven interface improvements
 
-## Secondary Users
+**Pain Points**:
 
-- UX designers interested in data-driven design
-    
-- Product managers evaluating adaptive interfaces
-    
-- Students learning scientific UI development
-    
+- Existing frameworks require too much custom work
+- No clear best practices for scientific UI development
+- Pressure to deliver quickly without sacrificing user experience
 
-## Epic & Story Structure
+**Success Criteria**: Can prototype a working data exploration interface in 2 weeks vs. previous 3+ months
+
+## Secondary Persona: Dr. Sarah Kim - UX Researcher
+
+**Role**: Studies human-computer interaction in scientific contexts  
+**Experience**: PhD in HCI, works with research labs on UI improvements
+
+**Goals**:
+
+- Understand how interaction data translates to interface design decisions
+- Find evidence-based approaches to adaptive interface design
+- Identify patterns applicable to her ongoing research projects
+
+**Success Criteria**: Discovers actionable insights for her current adaptive interface research within 30 minutes of exploration
+
+## Market Opportunity
+
+**Target Market**: 15,000+ research software engineers in academic and corporate R&D  
+**Adjacent Markets**: UX researchers, scientific UI consultants, graduate students  
+**Competitive Advantage**: Only framework specifically designed for scientific data workflows with proven adaptive patterns
+
+# 3. Epic & Story Structure
 
 ## Epic 1: Data Discovery Foundation (P0)
 
-**Epic Goal**: Enable users to search, filter, and discover relevant interaction data from the research dataset, providing the foundation for all analytical capabilities.
+_Foundation for all other functionality_
 
-**User Value**: As a researcher, I want to quickly find specific interaction sequences that match my analysis criteria, so I can focus on relevant data without manual filtering.
+**Business Value**: Reduces time-to-insights by 5x through efficient data discovery  
+**User Outcome**: Alex can find relevant interaction sequences in 30 seconds instead of 5+ minutes  
+**Success Metric**: 90% of users find their target data within 60 seconds
 
-**Epic Description**:  
-Implement the STRUDEL Search Data Repositories pattern to create an intuitive interface for exploring the 10,608 interaction dataset. This epic establishes the core data access layer that all other analytical features depend on.
+### User Stories:
 
-**Stories**:
+**Story 1.1: Quick Data Search**  
+_As Alex (Research Software Engineer), I want to search interaction data using keywords and filters so that I can quickly locate sequences relevant to my analysis without manually browsing thousands of records._
 
-1. **Story 1.1**: Search & Filter Interface
-    
-    - Implement text search bar with real-time filtering
-        
-    - Add collapsible filter panel for role, duration, efficiency
-        
-    - Display results in responsive card layout
-        
-2. **Story 1.2**: Results Management
-    
-    - Add pagination for large result sets
-        
-    - Implement sort controls (by time, efficiency, duration)
-        
-    - Create data export functionality (CSV)
-        
-3. **Story 1.3**: Data Foundation
-    
-    - Set up client-side data processing utilities
-        
-    - Implement caching for filter performance
-        
-    - Add loading states and error handling
-        
+**Acceptance Criteria**:
 
-**Dependencies**: None (foundation epic)
+- Search results appear within 200ms of typing
+- Filter by user role, efficiency score, and time period
+- Results show key metrics (duration, efficiency, role) at glance
+- Export filtered results to CSV for external analysis
 
-**Definition of Done**:
+**Story 1.2: Results Navigation**  
+_As Alex, I want to sort and paginate search results so that I can efficiently navigate large datasets and focus on the most relevant interactions first._
 
-- Users can search and filter the complete dataset in <200ms
-    
-- All interaction sequences are discoverable through multiple filter criteria
-    
-- Export functionality works for filtered results
-    
-- Search interface follows STRUDEL Kit patterns
-    
-- Local testability via CLI for data processing functions
-    
+**Acceptance Criteria**:
 
-## Epic 2: Interaction Pattern Exploration (P0)
-
-**Epic Goal**: Allow users to visualize and explore individual interaction sequences to understand user behavior patterns and decision flows.
-
-**User Value**: As a UX researcher, I want to examine detailed interaction sequences to identify common patterns and pain points in user journeys.
-
-**Epic Description**:  
-Build the STRUDEL Explore Data pattern with interactive visualizations that transform raw interaction data into comprehensible user journey maps using Sankey diagrams and detailed analysis views.
-
-**Stories**:
-
-1. **Story 2.1**: Sequence Visualization
-    
-    - Create Plotly Sankey diagram for interaction flows
-        
-    - Add hover details and interactive navigation
-        
-    - Implement breadcrumb navigation for deep exploration
-        
-2. **Story 2.2**: Detail Analysis Panel
-    
-    - Build split-view layout for sequence details
-        
-    - Add sortable data table with action breakdown
-        
-    - Create individual sequence deep-dive pages
-        
-3. **Story 2.3**: Pattern Recognition Tools
-    
-    - Highlight common interaction paths
-        
-    - Add efficiency scoring visualization
-        
-    - Implement sequence comparison functionality
-        
-
-**Dependencies**: Epic 1 (requires data discovery foundation)
-
-**Definition of Done**:
-
-- Users can visualize any interaction sequence as an intuitive flow diagram
-    
-- Detail panels provide complete action-by-action breakdowns
-    
-- Visualization renders in <1 second for sequences up to 100 actions
-    
-- Pattern highlighting helps identify optimization opportunities
-    
-- Navigation between sequences is seamless
-    
-
-## Epic 3: Comparative Role Analysis (P0)
-
-**Epic Goal**: Enable side-by-side comparison of interaction patterns between novice, intermediate, and expert users to reveal behavioral differences and optimization opportunities.
-
-**User Value**: As a product manager, I want to compare how different user skill levels approach tasks differently, so I can design adaptive interfaces that help novices perform like experts.
-
-**Epic Description**:  
-Implement the STRUDEL Compare Data pattern with synchronized visualization panels, statistical analysis, and efficiency metrics that demonstrate the 40% improvement potential through adaptive interfaces.
-
-**Stories**:
-
-1. **Story 3.1**: Split-Screen Comparison Interface
-    
-    - Create synchronized side-by-side visualization panels
-        
-    - Add role selection controls (novice/intermediate/expert)
-        
-    - Implement linked interactions between comparison views
-        
-2. **Story 3.2**: Efficiency Metrics Dashboard
-    
-    - Build Plotly grouped bar charts for efficiency comparisons
-        
-    - Create statistical summary cards with key insights
-        
-    - Add pattern heatmap showing behavioral differences
-        
-3. **Story 3.3**: Adaptive Interface Insights
-    
-    - Generate recommendations based on expert patterns
-        
-    - Calculate potential efficiency improvements
-        
-    - Provide actionable design suggestions
-        
-
-**Dependencies**: Epic 1 (data foundation), Epic 2 (visualization components)
-
-**Definition of Done**:
-
-- Users can compare patterns between any two user roles simultaneously
-    
-- Efficiency metrics clearly demonstrate performance differences
-    
-- Visual comparisons highlight specific areas for interface optimization
-    
-- Statistical insights are accurate and meaningful
-    
-- Recommendations provide actionable design guidance
-    
-
-## Epic 4: Temporal Pattern Intelligence (P1)
-
-**Epic Goal**: Reveal time-based patterns in user interactions to understand when and why behavioral changes occur over different time periods.
-
-**User Value**: As a behavioral analyst, I want to identify temporal patterns in user interactions to understand optimal timing for interface adaptations and user interventions.
-
-**Epic Description**:  
-Apply the STRUDEL Monitor Activities pattern to create temporal analysis dashboards that reveal daily rhythms, peak usage periods, and time-based efficiency variations in the interaction data.
-
-**Stories**:
-
-1. **Story 4.1**: Activity Timeline Visualization
-    
-    - Create Plotly time series charts for interaction patterns
-        
-    - Add date range filtering and zoom functionality
-        
-    - Implement daily/weekly/monthly view toggles
-        
-2. **Story 4.2**: Pattern Discovery Tools
-    
-    - Build calendar heatmap for usage intensity
-        
-    - Add peak analysis with automated insights
-        
-    - Create anomaly detection for unusual patterns
-        
-3. **Story 4.3**: Temporal Correlation Analysis
-    
-    - Link temporal patterns to efficiency metrics
-        
-    - Identify optimal timing for user interventions
-        
-    - Generate time-based adaptation recommendations
-        
-
-**Dependencies**: Epic 1 (data foundation), Epic 2 (base visualization patterns)
-
-**Definition of Done**:
-
-- Users can identify peak usage periods and efficiency patterns
-    
-- Temporal visualizations reveal actionable insights about user behavior rhythms
-    
-- Calendar views make large time ranges comprehensible
-    
-- Correlations between time and performance are clearly demonstrated
-    
-- Analysis supports evidence-based decisions about interface timing
-    
-
-## Cross-Epic Dependencies
-
-text
-
-`graph TD     E1[Epic 1: Data Discovery] --> E2[Epic 2: Pattern Exploration]     E1 --> E3[Epic 3: Role Comparison]     E1 --> E4[Epic 4: Temporal Intelligence]     E2 --> E3     E2 --> E4`
-
-**Dependency Rules**:
-
-- Epic 1 must be completed first (provides data access foundation)
-    
-- Epics 2 and 3 are the core value delivery (P0 priority)
-    
-- Epic 4 builds on visualization patterns from Epic 2
-    
-- No epic requires functionality from later epics
-    
-
-## Technical Architecture
-
-## Data Structure
-
-typescript
-
-`interface InteractionSequence {   id: string;   userId: string;   role: 'novice' | 'intermediate' | 'expert';   timestamp: Date;   duration: number;   actions: Action[];   efficiency: number; }`
-
-## File Structure (STRUDEL Kit Standard)
-
-text
-
-`src/ ├── pages/ │   ├── index.tsx                    # Landing page │   ├── explore/ │   │   ├── index.tsx               # Data repository search (Epic 1) │   │   └── $id.tsx                 # Individual sequence view (Epic 2) │   ├── compare/ │   │   └── index.tsx               # Role comparison (Epic 3) │   └── monitor/ │       └── index.tsx               # Temporal analysis (Epic 4) ├── components/ │   ├── FilterPanel.tsx             # Reusable filter sidebar │   ├── DataCard.tsx                # Interaction summary card │   ├── SequenceVisualizer.tsx     # Plotly wrapper │   └── Layout.tsx                  # App shell with nav ├── theme.tsx                       # MUI theme configuration └── utils/     ├── data-processing.ts          # Client-side data ops     └── export.ts                   # CSV export utilities`
-
-## Data Processing Strategy
-
-typescript
-
-`// All data processing happens client-side (STRUDEL Kit pattern) const processedData = useMemo(() => {   return rawData    .filter(sequence => matchesFilters(sequence, filters))     .sort((a, b) => sortByField(a, b, sortField))     .slice(page * pageSize, (page + 1) * pageSize); }, [rawData, filters, sortField, page]);`
-
-## State Management
-
-typescript
-
-`// React Context for cross-component state interface AppState {   selectedSequences: string[];   filters: FilterState;   compareMode: boolean;   timeRange: DateRange; } const AppContext = createContext<AppState>();`
-
-## MUI Theme Customization
-
-typescript
-
-`const theme = createTheme({   palette: {     primary: {       main: '#1976d2',    // STRUDEL blue     },     secondary: {       main: '#dc004e',    // Accent color     },     background: {       default: '#fafafa',       paper: '#ffffff',     },   },   typography: {     h1: { fontSize: '2.5rem', fontWeight: 500 },     h2: { fontSize: '2rem', fontWeight: 500 },     // Scientific UI optimized typography   },   components: {     MuiCard: {       defaultProps: {         variant: 'outlined',       },     },     MuiButton: {       defaultProps: {         disableElevation: true,       },     },   }, });`
-
-## Plotly.js Visualizations
-
-## 1. Sankey Diagram (Interaction Flows)
-
-javascript
-
-`{   type: 'sankey',   orientation: 'h',   node: {     pad: 15,     thickness: 20,     label: stateNames,     color: roleColors,   },   link: {     source: sourceIndices,     target: targetIndices,     value: transitionCounts,   } }`
-
-## 2. Grouped Bar Chart (Efficiency Comparison)
-
-javascript
-
-`{   type: 'bar',   x: taskNames,   y: efficiencyScores,   name: roleName,   marker: { color: roleColor } }`
-
-## 3. Calendar Heatmap (Temporal Patterns)
-
-javascript
-
-`{   type: 'heatmap',   x: dates,   y: hours,   z: interactionCounts,   colorscale: 'Blues' }`
-
-## Success Metrics
-
-## Technical Demonstration
-
-|Metric|Target|Measurement|
-|---|---|---|
-|Load Time|<3 seconds|Browser timing|
-|Plotly Render|<1 second|Performance API|
-|Filter Response|<200ms|User perceived|
-|Code Simplicity|<500 LOC per page|Code review|
-
-## STRUDEL Kit Showcase
-
-|Metric|Target|Validation|
-|---|---|---|
-|Patterns Used|4 major patterns|Code audit|
-|Component Reuse|>70% STRUDEL/MUI|Component analysis|
-|Custom Code|<30%|Keep it simple|
-|Documentation|Complete|README quality|
-
-## Development Timeline (30 days)
-
-## Week 1: Epic 1 - Foundation
-
--  Initialize STRUDEL Kit project
-    
--  Configure routing structure
-    
--  Create base layout with navigation
-    
--  Implement Epic 1 Stories 1.1-1.3
-    
--  Set up data processing utilities
-    
-
-## Week 2: Epic 2 & 3 - Core Value
-
--  Complete Epic 2: Pattern Exploration
-    
--  Build Epic 3: Role Comparison Dashboard
-    
--  Add basic Plotly visualizations
-    
--  Implement cross-epic state management
-    
-
-## Week 3: Epic 4 & Polish
-
--  Complete Epic 4: Temporal Intelligence
-    
--  Enhance visualizations with interactions
-    
--  Add loading states and error handling
-    
--  Performance optimization
-    
-
-## Week 4: Integration & Demo
-
--  Create compelling landing page
-    
--  Write comprehensive README
-    
--  Add inline code comments
-    
--  Deploy to hosting platform
-    
--  Create video walkthrough
-    
-
-## Content Strategy
-
-## Landing Page Sections
-
-1. **Hero**: "See How STRUDEL Kit Transforms Research Data"
-    
-2. **Problem**: "10,608 interactions. Hidden patterns. One framework."
-    
-3. **Solution**: Live demo tiles for each Epic
-    
-4. **Technical**: "Built with STRUDEL Kit" - component showcase
-    
-5. **CTA**: "Start Building" → GitHub/Docs
-    
-
-## Educational Elements
-
-- Tooltips explaining each STRUDEL pattern
-    
-- Code snippets showing implementation
-    
-- "View Source" links on key features
-    
-- Pattern applicability guide
-    
-
-## Constraints & Guidelines
-
-## Must Use
-
-- ✅ STRUDEL Kit file structure
-    
-- ✅ MUI components (no custom UI library)
-    
-- ✅ Plotly.js for visualizations
-    
-- ✅ Client-side data processing
-    
-- ✅ React Context for state
-    
-
-## Must Avoid
-
-- ❌ Animation libraries (framer-motion, anime.js)
-    
-- ❌ Server-side processing
-    
-- ❌ Custom routing solutions
-    
-- ❌ Non-MUI component libraries
-    
-- ❌ Complex state management (Redux)
-    
-
-## Risk Mitigation
-
-|Risk|Impact|Mitigation|
-|---|---|---|
-|Plotly performance with large datasets|High|Implement data sampling, max 1000 points|
-|Learning curve for STRUDEL patterns|Medium|Extensive inline documentation|
-|Epic dependencies blocking progress|Medium|Prioritize Epic 1 completion, parallel Epic 2-3 development where possible|
-|Limited animation capabilities|Low|Focus on data clarity over motion|
-|Browser compatibility|Low|Target modern browsers only|
-
-## Post-Launch Enhancements
-
-1. **Tutorial Mode**: Interactive walkthrough of patterns
-    
-2. **Code Examples**: Downloadable pattern implementations
-    
-3. **Theme Builder**: Visual MUI theme customizer
-    
-4. **More Patterns**: Add "Contribute Data" flow
-    
-5. **API Integration**: Show real-time data capabilities
-    
+- Sort by efficiency, duration, timestamp, or user role
+- Pagination handles 1000+ results smoothly
+- Visual indicators show result quality/relevance
+- Bookmarkable URLs for specific searches
 
 ---
 
-**Key Differentiator**: This demo doesn't just show adaptive interfaces—it demonstrates how STRUDEL Kit makes building them accessible to scientific developers through proven patterns, structured epics, and standard web technologies.
+## Epic 2: Pattern Exploration (P0)
 
-1. [https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/attachments/6379155/383493ae-a0dd-4b94-b421-ac0bfee4a6b7/STRUDEL-example-2-PRD.md](https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/attachments/6379155/383493ae-a0dd-4b94-b421-ac0bfee4a6b7/STRUDEL-example-2-PRD.md)
-2. [https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/attachments/6379155/e7e28390-6c97-466e-89d8-00c5071579c5/STRUDEL-example-2-brief.md](https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/attachments/6379155/e7e28390-6c97-466e-89d8-00c5071579c5/STRUDEL-example-2-brief.md)
+_Core value delivery - transforms raw data into insights_
+
+**Business Value**: Enables pattern discovery that leads to 40% efficiency improvements  
+**User Outcome**: Alex identifies optimization opportunities in user workflows  
+**Success Metric**: Users spend average 8+ minutes exploring individual sequences
+
+### User Stories:
+
+**Story 2.1: Interaction Flow Visualization**  
+_As Dr. Sarah (UX Researcher), I want to visualize user interaction sequences as flow diagrams so that I can identify common patterns and decision points in user behavior._
+
+**Acceptance Criteria**:
+
+- Interactive Sankey diagram shows complete interaction flow
+- Hover reveals action details and timing
+- Visual highlighting for inefficient paths
+- Breadcrumb navigation for deep exploration
+
+**Story 2.2: Pattern Comparison**  
+_As Alex, I want to compare multiple interaction sequences side-by-side so that I can identify differences between efficient and inefficient user approaches._
+
+**Acceptance Criteria**:
+
+- Select multiple sequences for comparison
+- Synchronized highlighting across visualizations
+- Metrics showing efficiency differences
+- Export comparison insights
+
+---
+
+## Epic 3: Role-Based Analysis (P0)
+
+_Demonstrates adaptive interface potential_
+
+**Business Value**: Shows concrete evidence for 40% efficiency improvement claims  
+**User Outcome**: Teams understand how to design interfaces that help novices perform like experts  
+**Success Metric**: 80% of users explore novice vs expert comparisons
+
+### User Stories:
+
+**Story 3.1: Expert vs Novice Insights**  
+_As Dr. Sarah, I want to compare interaction patterns between novice and expert users so that I can identify specific behaviors that lead to improved efficiency._
+
+**Acceptance Criteria**:
+
+- Side-by-side visualization of role-based patterns
+- Statistical significance indicators
+- Specific recommendations for interface improvements
+- Evidence supporting the 40% efficiency claim
+
+**Story 3.2: Adaptive Interface Recommendations**  
+_As Alex, I want to see concrete suggestions for how interfaces could adapt based on user expertise so that I can apply these insights to my own projects._
+
+**Acceptance Criteria**:
+
+- Actionable design recommendations
+- Examples of adaptive interface elements
+- ROI calculations for implementation effort
+- Code examples showing STRUDEL implementation
+
+---
+
+## Epic 4: Temporal Intelligence (P1)
+
+_Advanced insights for sophisticated users_
+
+**Business Value**: Reveals when and why interface adaptations should occur  
+**User Outcome**: Teams optimize interface timing and user intervention strategies  
+**Success Metric**: 40% of users explore temporal analysis features
+
+### User Stories:
+
+**Story 4.1: Usage Pattern Timeline**  
+_As Dr. Sarah, I want to analyze interaction patterns across different time periods so that I can understand when users are most efficient and identify optimal timing for interface adaptations._
+
+**Acceptance Criteria**:
+
+- Interactive timeline shows usage patterns by hour/day/week
+- Efficiency correlation with time periods
+- Peak usage identification with insights
+- Anomaly detection for unusual patterns
+
+## Cross-Epic Dependencies
+
+**Dependency Rules**:
+
+1. Epic 1 (Data Discovery) must complete before Epics 2 & 3 can begin
+2. Epic 2 provides visualization components needed for Epic 3
+3. Epic 4 requires data processing patterns from Epic 1
+4. No epic depends on future epic functionality (proper sequencing)
+
+# 4. Success Criteria & Metrics
+
+## Business Outcomes
+
+| Metric                   | Target                    | Timeline            | Measurement          |
+| ------------------------ | ------------------------- | ------------------- | -------------------- |
+| STRUDEL Kit GitHub Stars | +200                      | 30 days post-launch | GitHub analytics     |
+| Demo Engagement Rate     | 65% complete full journey | 60 days             | Analytics tracking   |
+| Framework Downloads      | +150                      | 90 days             | NPM/GitHub downloads |
+| User Feedback Score      | 4.2/5.0                   | 30 days             | Post-demo survey     |
+
+## User Experience Outcomes
+
+| Outcome               | Target                                      | Validation Method |
+| --------------------- | ------------------------------------------- | ----------------- |
+| Time to Understanding | 15 minutes to grasp STRUDEL value           | User testing      |
+| Pattern Recognition   | 80% identify key adaptive opportunities     | Exit survey       |
+| Implementation Intent | 60% plan to use STRUDEL Kit                 | Follow-up survey  |
+| Knowledge Transfer    | 70% can explain adaptive interface benefits | Quiz/assessment   |
+
+## Technical Performance
+
+| Metric               | Requirement        | Critical Path      |
+| -------------------- | ------------------ | ------------------ |
+| Initial Load Time    | < 3 seconds        | Epic 1 foundation  |
+| Visualization Render | < 1 second         | Epic 2 & 3         |
+| Search Response Time | < 200ms            | Epic 1 performance |
+| Mobile Compatibility | 95% feature parity | All epics          |
+
+# 5. Timeline & Milestones
+
+## 30-Day Development Sprint
+
+### Week 1: Foundation (Epic 1)
+
+**Milestone**: Data discovery fully functional  
+**Go/No-Go Decision**: Can users find and filter data effectively?
+
+**Deliverables**:
+
+- Complete search and filter interface
+- Data processing pipeline operational
+- Basic navigation and layout established
+- Performance benchmarks met
+
+### Week 2: Core Value (Epics 2 & 3)
+
+**Milestone**: Pattern exploration and role comparison working  
+**Go/No-Go Decision**: Does the demo clearly show STRUDEL Kit's value?
+
+**Deliverables**:
+
+- Interactive visualization components
+- Side-by-side comparison functionality
+- Efficiency metrics and insights
+- User testing feedback incorporated
+
+### Week 3: Enhancement & Polish (Epic 4 + UX)
+
+**Milestone**: Complete feature set with excellent UX  
+**Go/No-Go Decision**: Is the demo compelling enough to drive adoption?
+
+**Deliverables**:
+
+- Temporal analysis features
+- Landing page and user onboarding
+- Performance optimization complete
+- Educational content integrated
+
+### Week 4: Launch Preparation
+
+**Milestone**: Ready for public release  
+**Final Go/No-Go**: All success criteria met?
+
+**Deliverables**:
+
+- Documentation complete
+- Deployment and monitoring
+- Launch materials prepared
+- Post-launch metrics tracking active
+
+## Key Decision Points
+
+**Week 1 Gate**: If search performance < 500ms, pivot to simpler filtering approach  
+**Week 2 Gate**: If visualizations don't clearly show adaptive benefits, simplify Epic 3 scope  
+**Week 3 Gate**: If user testing shows confusion, add guided tour before launch  
+**Launch Gate**: Require 4.0+ user feedback score from beta users
+
+# 6. Constraints & Assumptions
+
+## Technical Constraints
+
+**Must Use**:
+
+- STRUDEL Kit architecture and components
+- Client-side data processing only
+- Material UI for consistent scientific UI patterns
+- Plotly.js for data visualizations
+
+**Must Avoid**:
+
+- Server-side processing (complexity)
+- Custom animation libraries (scope)
+- Non-standard routing solutions
+
+## Business Constraints
+
+- 30-day delivery timeline (non-negotiable)
+- Zero budget for external services
+- Must work on standard web browsers
+- Academic research attribution required
+
+## Key Assumptions
+
+1. **User Capability**: Target users have React/web development experience
+2. **Data Quality**: Research dataset provides meaningful insights when visualized
+3. **Market Readiness**: Scientific community ready for UI framework adoption
+4. **Technical Stability**: STRUDEL Kit components are production-ready
+
+# 7. Risks & Mitigation
+
+## High-Impact Risks
+
+| Risk                                            | Probability | Impact | Mitigation Strategy                                        | Contingency Plan                            |
+| ----------------------------------------------- | ----------- | ------ | ---------------------------------------------------------- | ------------------------------------------- |
+| Plotly performance issues with large datasets   | Medium      | High   | Implement data sampling, max 1000 points per visualization | Pre-aggregate data, simplify visualizations |
+| Users don't understand adaptive interface value | High        | High   | Extensive user testing, clear before/after examples        | Add guided tutorial, simplify messaging     |
+| STRUDEL Kit learning curve too steep            | Medium      | High   | Comprehensive documentation, code examples                 | Create simplified "getting started" track   |
+
+## Medium-Impact Risks
+
+| Risk                            | Mitigation                                            | Owner         |
+| ------------------------------- | ----------------------------------------------------- | ------------- |
+| Epic dependencies cause delays  | Parallel development where possible, clear interfaces | Tech Lead     |
+| Browser compatibility issues    | Target modern browsers only, progressive enhancement  | Frontend Dev  |
+| Academic attribution complexity | Legal review early, clear citation standards          | Product Owner |
+
+## Risk Monitoring
+
+**Weekly Risk Review**: Every Friday, assess top 3 risks and mitigation progress  
+**Escalation Triggers**: Any risk moves to "High" probability or impact  
+**Contingency Activation**: If any P0 epic appears unlikely to complete on time
+
+# 8. Post-Launch Strategy
+
+## Success Amplification
+
+**If demo exceeds engagement targets**:
+
+1. Create additional STRUDEL Kit examples
+2. Develop tutorial series
+3. Present at scientific computing conferences
+4. Build community showcase
+
+## Continuous Improvement
+
+**30-Day Review**: User feedback analysis and iteration planning  
+**60-Day Review**: Impact assessment and next phase planning  
+**90-Day Review**: Long-term strategy and resource allocation
+
+---
+
+## Appendix A: Technical Architecture
+
+_[Technical implementation details moved to appendix to maintain PRD focus on user value and business outcomes]_
+
+### Data Structure
+
+```typescript
+interface InteractionSequence {
+  id: string;
+  userId: string;
+  role: 'novice' | 'intermediate' | 'expert';
+  timestamp: Date;
+  duration: number;
+  actions: Action[];
+  efficiency: number;
+}
+```
+
+### STRUDEL Kit Integration
+
+- Search Data Repositories Pattern → Epic 1
+- Explore Data Pattern → Epic 2
+- Compare Data Pattern → Epic 3
+- Monitor Activities Pattern → Epic 4
+
+### Performance Requirements
+
+- Client-side data processing using React Context
+- Plotly.js for all visualizations
+- Material UI components throughout
+- Responsive design for mobile compatibility
+
+---
+
+**This PRD serves as the definitive organizing document for cross-functional team alignment, decision-making, and success measurement throughout the 30-day development sprint.**
+
+[1](https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/attachments/6379155/383493ae-a0dd-4b94-b421-ac0bfee4a6b7/STRUDEL-example-2-PRD.md)
+[2](https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/attachments/6379155/e7e28390-6c97-466e-89d8-00c5071579c5/STRUDEL-example-2-brief.md)
