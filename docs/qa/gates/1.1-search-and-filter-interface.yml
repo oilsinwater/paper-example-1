@@ -1,0 +1,17 @@
+schema: 1
+story: '1.1'
+gate: CONCERNS
+status_reason: 'Performance budget and CSV export accuracy carry medium risk; proceed with mitigations tracked.'
+reviewer: 'Quinn'
+updated: '2025-09-16T00:00:00Z'
+top_issues:
+  - id: PERF-001
+    severity: medium
+    finding: 'Sub-200 ms search responsiveness relies on memoization/virtualization implementation and benchmarking.'
+    suggested_action: 'Implement memoized selectors, verify with 10k-record fixtures, and add automated latency assertions.'
+  - id: DATA-001
+    severity: medium
+    finding: 'CSV export must reflect active filters with schema validation to avoid mismatches.'
+    suggested_action: 'Add unit/integration tests comparing on-screen data vs generated CSV and handle failure UX per AC5.'
+waiver:
+  active: false
